@@ -1,0 +1,41 @@
+body
+{
+  font-family: sans-serif;
+  margin-left: 4em;
+}
+
+#choices
+{
+  list-style-type: none;
+}  
+
+.partofspeech
+{
+  font-style: italic;
+}
+
+#submit_section
+{
+  text-align: center;
+}
+
+input[type="radio"]
+{
+  display: inline-block;
+  width: 30px;
+  vertical-align: text-top;
+}
+
+label
+{
+  display: inline-block;
+  width: 80%;
+  vertical-align: text-top;
+  margin-bottom: 10px;
+}
+
+button[type="submit"]
+{
+  font-size: 16pt;
+  font-weight: bold;
+}

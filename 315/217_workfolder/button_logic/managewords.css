@@ -1,0 +1,28 @@
+/*
+   YOUR NAME HERE
+*/
+
+dt
+{
+  display: inline-block;
+  font-weight: bold;
+}
+
+dd
+{
+  margin-bottom: 2em;
+}
+
+body
+{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: sans-serif;
+}
+
+.partofspeech
+{
+  font-style: italic;
+}
+

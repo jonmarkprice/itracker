@@ -1,0 +1,102 @@
+5f:
+(A + B -> C).(C -> D.E) -> (A -> D)
+{
+A + B -> C	[prem]
+C -> D.E	[prem]
+C -> D	[2 simp]
+(A + B) -> D	[1, 3 hyp-syll]
+A -> D	(subproof using DFI, DeMorg, Dist, Comm, DFI)
+qed [(?) cp]
+}
+
+5j:
+(A -> C) -> (A -> B + C)
+{
+A -> C	[prem]
+A -> (C + B) [add] (?)
+A -> (B + C) {comm}
+qed [1-3 cp]
+}
+
+6d:
+(A -> C) -> (A -> B + C)
+{
+A -> C	[prem]
+	{
+	!(A -> B + C)	[prem for (?)]
+	!(!A + B + C)	{dfi}
+	A.!(B + C)	{demorg}
+	A	[simp]
+	!(B + C)	[simp]
+	!B.!C	{demorg}
+	!C	[simp]
+	C	[1,5 mp]
+	False	[contr]
+	}
+A -> B + C	[1-10 ip]
+qed	[1, 11 cp]
+}
+
+6h:
+(C -> A).(!C -> B) -> (A + B)
+{
+C -> A	[prem]
+!C -> B	[prem]
+	{
+	!(A + B)	[prem for (?)]
+	!A.!B	{demorg}
+	!A	[simp]
+	!B	[simp]
+	!C	[1, 5 mt]
+	B	[2, 7 mp]
+	False	[6, 8 contr]
+	}
+A + B	[1-9 ip]
+qed	[1, 2, 10 cp]
+}
+
+7f:
+(A -> B) -> ((B -> C) -> (A + B -> C))
+{
+A -> B	[prem]
+	{
+	!((B -> C) -> (A + B -> C))	[prem for (?)]
+	!(!(B -> C) + (A + B -> C))	{dfi}
+	(mistake)
+	}
+}
+
+7h:
+(A -> C) -> (A.B -> C)
+{
+A -> C	[prem]
+	{
+	!(A.B -> C)	[prem for (?)]
+	!(!(A.B) + C)	{dfi}
+	!!(A.B).!C	{demorg}
+	A.B.!C	[double neg]
+	A	[simp]
+	!C	[simp]
+	C	[5, 1 mp]
+	False	[6, 7 contr]
+	}
+A.B -> C	[1-8 ip]
+qed	[1, 9 cp]
+}
+
+14d:
+A + (!A.B) == A + B
+(->)
+{
+	A + (!A.B)	[prem]
+	(A + !A).(A + B)	{dist}
+	T.(A + B)	{excl middle}
+	(A + B)	{id for and}
+	qed	[cp]
+}
+(<-)
+{
+	A + B	[prem]
+	(todo)
+	
+}

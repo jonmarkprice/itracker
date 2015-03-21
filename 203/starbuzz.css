@@ -1,0 +1,82 @@
+/* Jonathan Price */
+
+body {
+  background-color: #D2B48C;
+}
+
+h1, p {
+  font-family: sans-serif;
+}
+
+p {
+  font-size: 0.8em;
+}
+
+a {
+  color: #8B4513; /*maybe more red/pinkish ?*/
+  text-decoration: none;
+}
+
+section.maincontent {
+  background-image: url("background.gif");
+  /*padding-left: 20px;
+  padding-right: 20px;*/
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 350px;
+}
+
+p.motto, p.mottobottom {
+  text-align: center;
+  line-height: 10%;
+}
+
+p.mottobottom {
+  padding-bottom: 15px;
+}
+
+h1 {
+  color: #8B4513;
+  font-size: 0.9em;
+  /*font-family: sans-serif;*/ /*generalized*/
+}
+
+header {
+  background-color: #8B4513;
+}
+
+aside {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+  width: 300px;
+  float: right;
+  background-image: url("background.gif");
+}
+
+footer {
+  background-color: #8B4513;
+  text-align: center;
+  color: #D9D6BE;
+  /*clear: bottom;*/
+  clear: both;
+  padding: 20px;
+}
+
+div#coupon {
+  position: fixed;
+  top: 300px;
+  left: -80px;
+}
+
+#award {
+  position: absolute;
+  top: 25px;
+  left: 400px;
+}
+
+p.beanmachineimage > img {
+  position: relative;
+  margin-left: 100px;
+}
