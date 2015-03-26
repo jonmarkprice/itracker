@@ -15,8 +15,8 @@ if (isset($_POST['data_entered'])
   $username = htmlspecialchars($_POST['username']);
   $firstname = htmlspecialchars($_POST['firstname']);
   $lastname = htmlspecialchars($_POST['lastname']);
-  $email = htmlspecialchars($_POST['email'])
-  $pwhash = password_hash($_POST['password', PASSWORD_DEFAULT]);
+  $email = htmlspecialchars($_POST['email']);
+  $pwhash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
   // prepare insert 
   $sql = 'insert into user (username, firstname, lastname, email, pwhash)
