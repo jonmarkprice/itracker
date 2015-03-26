@@ -21,7 +21,7 @@
   </head>
   <body>
     <?php if( $rows !== false ): ?>
-      <p>No users created yet. <a href="enter_info.php">Create some!</a></p>
+      <p>No users created yet. <a href="enter_data.php">Create some!</a></p>
     <?php else: ?>
     <table>
       <tr>
