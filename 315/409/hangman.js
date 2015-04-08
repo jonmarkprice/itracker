@@ -1,0 +1,465 @@
+/*
+  Your Name Here
+*/
+
+"use strict";
+window.onload = function()
+{
+    document.getElementById( 'guessbutton' ).onclick = guessLetter;
+    document.getElementById( 'newgamebutton' ).onclick = newGame;
+}
+
+// constants
+var POSSIBLE_WORDS = 
+    [
+        "abeyance",
+        "abjure",
+        "abrogate",
+        "abstruse",
+        "acarpous",
+        "accretion",
+        "amortize",
+        "aplomb",
+        "apostasy",
+        "apostate",
+        "apposite",
+        "approbation",
+        "arabesque",
+        "ascetic",
+        "asperity",
+        "assiduous",
+        "astringent",
+        "augury",
+        "baleful",
+        "beatific",
+        "beatify",
+        "bedizen",
+        "bellicose",
+        "benign",
+        "benison",
+        "bequest",
+        "blandishment",
+        "blithe",
+        "bombastic",
+        "burnish",
+        "cajole",
+        "calumny",
+        "capricious",
+        "castigate",
+        "censure",
+        "chicanery",
+        "churlish",
+        "cloture",
+        "coeval",
+        "cogent",
+        "collusion",
+        "commodious",
+        "complaisance",
+        "compunction",
+        "concord",
+        "contemn",
+        "continent",
+        "contumacious",
+        "convoke",
+        "cornucopia",
+        "corporeal",
+        "craven",
+        "credulous",
+        "cursory",
+        "dapper",
+        "dastard",
+        "dearth",
+        "delineate",
+        "demagogue",
+        "denouement",
+        "desiccant",
+        "desultory",
+        "detumescence",
+        "diaphanous",
+        "diffidence",
+        "dilatory",
+        "discomfit",
+        "discountenance",
+        "disingenuous",
+        "dissemble",
+        "dissolute",
+        "divestiture",
+        "doggerel",
+        "dulcet",
+        "ebullience",
+        "ecumenical",
+        "edacious",
+        "effete",
+        "effluvia",
+        "effrontery",
+        "effulgent",
+        "egress",
+        "elegiac",
+        "emaciate",
+        "encomium",
+        "endemic",
+        "enervate",
+        "enthral",
+        "epistle",
+        "epithet",
+        "equable",
+        "equanimity",
+        "equipoise",
+        "equivocal",
+        "equivocate",
+        "erudite",
+        "euphonious",
+        "evince",
+        "excoriate",
+        "excoriation",
+        "exculpate",
+        "exigent",
+        "exorbitant",
+        "expiation",
+        "exscind",
+        "extant",
+        "extirpate",
+        "fatuous",
+        "feckless",
+        "fecund",
+        "felicity",
+        "fervid",
+        "fetter",
+        "finical",
+        "florid",
+        "foible",
+        "foppish",
+        "forbearance",
+        "forswear",
+        "frenetic",
+        "froward",
+        "fulmination",
+        "gaucherie",
+        "germane",
+        "gossamer",
+        "grandiloquent",
+        "gregarious",
+        "halcyon",
+        "harangue",
+        "harrow",
+        "haughty",
+        "hermetic",
+        "hirsute",
+        "histrionic",
+        "homiletics",
+        "hoodwink",
+        "hubris",
+        "iconoclast",
+        "idolatry",
+        "ignoble",
+        "ignominious",
+        "imbroglio",
+        "impecunious",
+        "imperious",
+        "impiety",
+        "importune",
+        "impromptu",
+        "impugned",
+        "impute",
+        "inchoate",
+        "incorrigibility",
+        "inculcate",
+        "incursion",
+        "indefatigability",
+        "indigence",
+        "ineluctable",
+        "ingenuous",
+        "inimical",
+        "inscrutable",
+        "insipid",
+        "interdict",
+        "intransigence",
+        "intransigent",
+        "inundate",
+        "inured",
+        "involute",
+        "irascible",
+        "irrevocable",
+        "itinerate",
+        "labyrinthine",
+        "lachrymose",
+        "lascivious",
+        "lassitude",
+        "latent",
+        "laudatory",
+        "liberality",
+        "libertine",
+        "lionize",
+        "loquacious",
+        "lucubrate",
+        "luculent",
+        "macerate",
+        "machination",
+        "maladroit",
+        "malapropism",
+        "malleable",
+        "matriculation",
+        "maudlin",
+        "mellifluous",
+        "mendacious",
+        "mendacity",
+        "mendicant",
+        "middling",
+        "misogynist",
+        "morose",
+        "multifarious",
+        "munificent",
+        "neophyte",
+        "noisome",
+        "nosegay",
+        "nugatory",
+        "obdurate",
+        "obloquy",
+        "obstreperous",
+        "obtrusive",
+        "obtuse",
+        "obviate",
+        "occluded",
+        "odious",
+        "officious",
+        "ominous",
+        "onerous",
+        "opprobrious",
+        "ossify",
+        "ostentation",
+        "ostracism",
+        "overweening",
+        "palate",
+        "palatial",
+        "palliate",
+        "palpability",
+        "palpitate",
+        "panegyric",
+        "pariah",
+        "parsimonious",
+        "patina",
+        "paucity",
+        "peccadillo",
+        "pedantic",
+        "pellucid",
+        "penitent",
+        "penurious",
+        "penury",
+        "peregrination",
+        "peremptory",
+        "perfidious",
+        "perfidy",
+        "perfunctory",
+        "peripatetic",
+        "periphrastic",
+        "perish",
+        "pernicious",
+        "perspicacity",
+        "petrous",
+        "petulant",
+        "philistine",
+        "phlegmatic",
+        "picaresque",
+        "piquant",
+        "plaintive",
+        "platitude",
+        "pliant",
+        "poignant",
+        "ponderous",
+        "portent",
+        "precepts",
+        "preclude",
+        "predilection",
+        "predominate",
+        "preponderance",
+        "preternatural",
+        "prevaricate",
+        "proclivity",
+        "profligacy",
+        "profundity",
+        "profuse",
+        "prolix",
+        "propitious",
+        "prosaic",
+        "proscribe",
+        "provident",
+        "provisional",
+        "pucker",
+        "pugnacious",
+        "puissance",
+        "punctilious",
+        "pungency",
+        "pusillanimous",
+        "putrefaction",
+        "quiescence",
+        "quiescent",
+        "quixotic",
+        "quotidian",
+        "rabble",
+        "raconteur",
+        "rancorous",
+        "rapacious",
+        "rebuff",
+        "recalcitrant",
+        "recidivism",
+        "reciprocity",
+        "recompense",
+        "recondite",
+        "redoubtable",
+        "refractory",
+        "refulgent",
+        "regale",
+        "remonstrate",
+        "repast",
+        "reprobate",
+        "repudiate",
+        "requite",
+        "rescind",
+        "reticent",
+        "sagacious",
+        "salubrious",
+        "sanctimony",
+        "sanguine",
+        "satiate",
+        "saturnine",
+        "scurvy",
+        "sedulous",
+        "sententious",
+        "serration",
+        "simper",
+        "smolder",
+        "somatic",
+        "sophomoric",
+        "soporific",
+        "sordid",
+        "specious",
+        "spurious",
+        "stanch",
+        "stentorian",
+        "stipple",
+        "stolid",
+        "stormy",
+        "striated",
+        "strident",
+        "suborn",
+        "subsume",
+        "succor",
+        "summarily",
+        "sumptuous",
+        "superfluous",
+        "supersede",
+        "supine",
+        "suppliant",
+        "supplicate",
+        "sycophant",
+        "taciturn",
+        "tangential",
+        "tassel",
+        "tautology",
+        "tawdry",
+        "teetotal",
+        "temerity",
+        "timorous",
+        "torpid",
+        "transgress",
+        "transitory",
+        "trenchant",
+        "truculent",
+        "turbid",
+        "turgid",
+        "ubiquitous",
+        "umbrage",
+        "undulate",
+        "upbraid",
+        "urbane",
+        "vacillation",
+        "vagary",
+        "veneration",
+        "veracity",
+        "verdant",
+        "verisimilitude",
+        "veritable",
+        "vestige",
+        "vilify",
+        "virago",
+        "vitiate",
+        "vivacious",
+        "volubility",
+        "welter"
+    ];
+
+var MAX_GUESSES = 6;           // number of total guesses per game
+
+// global variables
+var word = "?";                // random word user is trying to guess
+var guesses = "";              // letters the player has guessed
+var guessCount = MAX_GUESSES;  // number of guesses player has left
+
+// Chooses a new random word and displays its clue on the page.
+function newGame() 
+{
+    // choose a random word
+    var randomIndex = parseInt(Math.random() * POSSIBLE_WORDS.length);
+    word = POSSIBLE_WORDS[randomIndex];
+    guessCount = MAX_GUESSES;
+    guesses = "";
+    updatePage();   // show initial word clue - all underscores
+}
+
+// Guesses a letter.  Called when the user presses the Guess button.
+function guessLetter() 
+{
+    var input = document.getElementById("guess");
+    var clue = document.getElementById("clue");
+    var letter = input.value;
+    if (guessCount == 0 || clue.innerHTML.indexOf("_") < 0 ||
+        guesses.indexOf(letter) >= 0) 
+    {
+        return;   // game is over, or already guessed this letter
+    }
+    guesses += letter;
+    if (word.indexOf(letter) < 0) {
+        guessCount--;      // an incorrect guess
+    }
+    updatePage();
+}
+
+// Updates the hangman image, word clue, etc. to the current game state.
+function updatePage() 
+{
+    // update clue string such as "h _ l l _ "
+    var clueString = "";
+    for (var i = 0; i < word.length; i++) {
+        var letter = word.charAt(i);
+        if (guesses.indexOf(letter) >= 0) 
+        {   // letter has been guessed
+            clueString += letter + " ";
+        } 
+        else 
+        {                              // not guessed
+            clueString += "_ ";
+        }
+    }
+
+    var clue = document.getElementById("clue");
+    clue.innerHTML = clueString;
+    
+    // show the guesses the player has made
+    var guessArea = document.getElementById("guesses");
+    if (guessCount == 0) 
+    {
+        guessArea.innerHTML = "You lose.";    // game over (loss)
+    } 
+    else if (clueString.indexOf("_") < 0) 
+    {
+        guessArea.innerHTML = "You win!";     // game over (win)
+    } 
+    else 
+    {
+        guessArea.innerHTML = "Guesses: " + guesses;
+    }
+
+    // update hangman image
+    var image = document.getElementById("hangmanpic");
+    image.src = "hangman" + guessCount + ".gif";
+}

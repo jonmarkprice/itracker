@@ -40,7 +40,7 @@ class User() {
     send_password($new_password, $email);
   }
 
-  function change_password($new_password)
+  public function change_password($new_password)
   {
     $hash = password_hash($new_password, PASSWORD_DEFAULT);
     # open file or database
@@ -48,13 +48,19 @@ class User() {
     # set password to $new_password
   }
 
-  function change_fullname($new_fullname)
+  public function get_username()
+  {
+    # query database or file
+  }
+
+  public function change_fullname($new_fullname)
   {
     $fullname = $new_fullname;
     # open file or database
     # find user with $username
     # change #full_name
   }
+
 
 
 }
