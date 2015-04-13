@@ -1,0 +1,154 @@
+/* Cindy La and Jonathan Price */
+
+body
+{
+  background-color: #003d3d;
+}
+
+header
+{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-color: #fffffc;
+  border-style: solid;
+  border-color: #99ffcc;
+  border-width: 5px;
+  font-family: sans-serif;
+  color: #003d3d;
+  font-size: large;
+}
+
+#logo
+{
+  position: absolute;
+  top: 10px;
+  left: 250px;
+  width: 500px;
+  height: auto;
+}
+
+#inventory
+{
+  position: absolute;
+  right: 250px;
+  top: 125px;
+  width: 300px;
+  height: auto;
+}
+
+#nav
+{
+  list-style-type: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0;
+  border: 2px solid;
+  border-radius: 25px;
+}
+
+#nav li, footer
+{
+  display: inline;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  font-family: sans-serif;
+  background-color: #fffffc;
+}
+
+h1, h2
+{
+  margin: 10px;
+  padding: 20px;
+  background-color: #99ffcc;
+  color: #003d3d;
+  font-family: sans-serif;
+}
+
+h2
+{
+  padding: 10px;
+}
+
+a:link
+{
+  color: #003d3d;
+  text-decoration: underline;
+}
+
+a:visited
+{
+  color: #ff33cc;
+  text-decoration: none;
+}
+
+a:hover
+{
+  font-style: italic;
+}
+
+ul
+{
+  font-family: sans-serif;
+  color: #003d3d;
+}
+
+#contact
+{
+  color: white;
+}
+
+p, table
+{
+  background-color: #fffffc;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-color: #ff33cc;
+  border-width: 2px;
+  font-family: sans-serif;
+  color: #003d3d;
+}
+
+
+aside
+{
+  float: right;
+}
+
+table
+{
+  border-collapse: collapse;
+}
+
+table, th, td
+{
+  border: 1px solid #003d3d;
+  padding: 5px;
+  text-align: left;
+}
+
+.button
+{
+  background-color: #003d3d;
+}
+
+footer
+{
+  display: block;
+  color: #003d3d;
+  font-size: 75%;
+}
