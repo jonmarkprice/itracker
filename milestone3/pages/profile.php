@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 session_start();
-include("functions.php");
+include("../lib/functions.php");
 
 $error_msg = '';
 $already_logged_in = false;
@@ -52,7 +52,7 @@ if( $already_logged_in == false && isset($_POST['new_username'])
 <html>
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="session.css" />
+    <link rel="stylesheet" href="../style/session.css" />
     <title>Session Demo</title>
   </head>
 

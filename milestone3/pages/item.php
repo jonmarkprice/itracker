@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="author" content="Cindy La and Jonathan Price" />
-    <link rel="stylesheet" href="itracker.css" />
+    <link rel="stylesheet" href="../style/itracker.css" />
     <title>Item Statistics</title>
   </head>
   <body>
