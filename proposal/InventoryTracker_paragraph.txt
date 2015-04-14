@@ -1,0 +1,22 @@
+Inventory Tracker
+
+Keeps track of information on a retailer’s inventory and sales history.
+
+Fields:
+classes of items: name, description, variety (e.g. type, color, flavor, size), image, retail price, cost to seller
+item specific: quantity, location, defects, expiration date, date obtained, selling status, shipping status, taxes paid, price sold
+
+Functionality:
+Sort by field
+CRUD functionality
+Create or add new entries
+Read, retrieve, search, or view existing entries
+Update or edit existing entries
+Delete/deactivate existing entries
+
+Enhancements:
+sales history and statistics for each type of item
+total number sold, dates sold (frequency for period of time), net profit tracker, number returned by customer, number and cause of lost items (over expiration date, defective, etc).
+popularity of specific varieties (type, color, flavor, size).
+default values for fields based on item class and entry time
+CSV export
