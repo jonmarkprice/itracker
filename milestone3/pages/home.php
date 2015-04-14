@@ -22,13 +22,13 @@ endforeach;
   <head>
     <meta charset="utf-8" />
     <meta name="author" content="Cindy La and Jonathan Price" />
-    <link rel="stylesheet" href="itracker.css" />
+    <link rel="stylesheet" href="../style/itracker.css" />
     <title>CL Inventory Tracker</title>
   </head>
   <body>
 
     <header>
-      <img id="logo" src="itrack_logo.png" alt="logo" />
+      <img id="logo" src="../resources/itrack_logo.png" alt="logo" />
     </header>
 <!--
     <div id="inventory">

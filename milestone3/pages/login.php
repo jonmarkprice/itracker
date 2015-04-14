@@ -75,7 +75,7 @@ else
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="session.css" />
+    <link rel="stylesheet" href="../style/session.css" />
     <title>Session Demo</title>
   </head>
 
