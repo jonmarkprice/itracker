@@ -30,11 +30,11 @@ endforeach;
     <header>
       <img id="logo" src="itrack_logo.png" alt="logo" />
     </header>
-
+<!--
     <div id="inventory">
       <img src="inventory.png" alt="inventory" />
     </div>
-
+-->
     <aside class="login">
       <?php if(!$loggedin): ?>
         <p><a href="login.php">Log In</a></p>

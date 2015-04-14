@@ -1,22 +1,44 @@
- <?php
-# read a file of text, strip newlines
-# return the file as an array of lines
-function get_a_file( $filename )
-{
-  $lines = file( $filename, FILE_IGNORE_NEW_LINES );
-  return $lines;
-}
+<?php
+  require_once('../../cs315/db_login.php');
 
-# overwrite file
-function write_to_file($lines, $filename)
-{
-  $file = fopen($filename, "w");
-  foreach($lines as $line):
-    fwrite($file, $line . PHP_EOL);
-  endforeach;
-  fclose($file);
-}
+  $db = new PDO("mysql:host=$db_hostname; dbname=jmp3748; charset=utf8",
+      $db_username, $db_password,
+      array(PDO::ATTR_EMULATE_PREPARES => false,
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+
+  $entry = 'insert into item(pid, name, type, unit)
+           values(:pid, :name, :subname, :unit)';
+
+  $statement = $db->prepare($entry);
+
+  if(isset($_POST['enter'])):
+
+    if(isset($_POST['pid']) && preg_match('|^\d{5}$|', $_POST['pid'])):
+      $pid = $_POST['pid'];
+      $statement->bindParam(':pid', $pid, PDO::PARAM_INT);
+    endif;
+
+    if(isset($_POST['name'])):
+      $name = htmlspecialchars($_POST['name']);
+      $statement->bindParam(':name', $name, PDO::PARAM_STR);
+    endif;
+
+    if(isset($_POST['subname'])):
+      $subname = htmlspecialchars($_POST['subname']);
+      $statement->bindParam(':subname', $subname, PDO::PARAM_STR);
+    endif;
+
+    if(isset($_POST['unit'])):
+      $unit = htmlspecialchars($_POST['unit']);
+      $statement->bindParam(':unit', $unit, PDO::PARAM_STR);
+    endif;
+
+    $statement->execute();
+
+  endif;
+
 ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -33,57 +55,45 @@ function write_to_file($lines, $filename)
 
     <p>
       <label>
-        Name of item:
-      </label><input type="text" autofocus="autofocus" name="itemName" />
+        Product ID:
+      </label><input type="text" id="pid" name="pid" 
+               pattern="|^\d{5}$|" autofocus="autofocus" />
     </p>
 
     <p>
       <label>
-        Description:
-      </label><input type="text" name="desc" />
+        Name: 
+      </label><input type="text" id="name" name="name" />
     </p>
 
     <p>
       <label>
         Flavor/Size/Collection:
-      </label><input type="text" name="type" />
+      </label><input type="text" id="subname" name="subname" />
     </p>
 
     <p>
       <label>
-        Quantity:
-      </label><input type="text" name="quant" pattern="/^\d+$/" />
+        Unit: 
+      </label><input type="text" id="unit" name="unit"
+               pattern="|^\d+$|" />
     </p>
-
+<!--
     <p>
       <label>
         Date:
       </label><input type="date" name="date" pattern="/^(19|20)\d{2}[- /.]
          (0[1-9]|1[012][- /.](0[1-9]|[12][0-9]|3[01])$/" />
     </p>
-
+-->
     <p class="button">
       <button type="submit" name="addItem">Add Item</button>
     </p>
 
     </form>
 
-<?php
-  $filename = "input.txt";
-  $lines = get_a_file($filename);
-
-    if( isset($_POST['addItem']) ):
-      $new_line = $_POST['itemName'] . "\t"
-      . $_POST['desc'] . "\t"
-      . $_POST['type'] . "\t"
-      . $_POST['quant'] . "\t"
-      . $_POST['date'];
-      array_push($lines, $new_line);
-      write_to_file($lines, $filename);
-    endif;
-?>
-
-  <a href="home.php">Return to Home</a>
+    <p> <a href="home.php">Return to Home</a> </p>
 
   </body>
 </html>
+
