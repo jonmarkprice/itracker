@@ -21,7 +21,7 @@ if( $already_logged_in == false && isset($_POST['new_username'])
   $username = $_POST['new_username'];
   if( user_exists( $username) )
   {
-    $error_msg = "The username $username already exists. 
+    $error_msg = "The username $username alredy exists. 
     Please choose a new one.";
   }
   else

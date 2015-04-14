@@ -1,13 +1,13 @@
- <?php
-
+<?php
 session_start();
 $loggedin = isset( $_SESSION['username'] ) && isset( $_SESSION['fullname'] );
 
-$filename = "input.txt";
-$lines = file( $filename, FILE_IGNORE_NEW_LINES );
+//$filename = "input.txt";
+//$lines = file( $filename, FILE_IGNORE_NEW_LINES );
+
 $field_names = ["Name", "Description", "Type", "Quantity", "Date In"];
 $i = 0;
-foreach( $lines as $line):
+foreach($ as $line):
   list($name, $desc, $type, $n, $date) = explode("\t", $line);
   $items[$i]["Name"] = $name;
   $items[$i]["Description"] = $desc;
