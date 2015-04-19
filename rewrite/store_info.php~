@@ -10,6 +10,7 @@ $db = new PDO(
 
 if(!isset($_POST['data_entered'])):
   header("Location: enter_info.html");
+
 else:
 
   //echo "<p>username is set</p>";
