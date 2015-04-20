@@ -14,6 +14,8 @@
     $username = $_SESSION['username'];
   endif;
 
+  $loggedin = isset( $_SESSION['username'] ) && isset( $_SESSION['fullname'] );
+
   # connect to database
   $db = new PDO(
     "mysql:host=$db_hostname;dbname=jmp3748;charset=utf8",
@@ -37,7 +39,57 @@
   </head>
   <body>
     <p>Hello <a href="profile.php"><?= $username ?></a>!</p>
-    <h1>View users</h1>
+
+    <h1>
+      <img id="logo" src="itrack_logo.png" alt="logo" />
+    </h1>
+
+    <aside class="login">
+
+      <?php if(!$loggedin): ?>
+        <p><a href="login.php">Log In</a></p>
+      <?php else: ?>
+        <p>
+          Hello <?= $_SESSION['fullname'] ?>!
+        </p>
+        <p>
+          <a href="profile.php">Edit Profile</a>
+        </p>
+        <p>
+          <a href="logout.php">Logout</a>
+        </p>
+      <?php endif;?>
+
+    </aside>
+
+    <ul id="nav">
+      <li><a href="add.php">Add New Item</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li>
+        Search for your inventory here! &#40;Insert search bar here&#41;
+        <!--<form method="get" action="itracker.php">
+          <input type="search" />
+        </form>-->
+      </li>
+    </ul>
+
+    <p>
+      Welcome to the inventory tracker created by Cindy and Jon.  This is
+      a tool to help you organize your business as easily and efficiently
+      as possible.  You are able to add and delete items, see your whole
+      inventory in tables or graphs, and find items by table sorting and
+      search bar.  With the click of an item, see its sales trends
+      or observe the overall incoming and outgoing items over time on
+      the front page.
+    </p>
+
+    <p class="side">
+      This is a work in progress, so if you have any suggestions for
+      improvement please don&rsquo;t hesitate to contact us.  Any questions,
+      comments, or concerns are also encouraged.
+    </p>
+
+
     <?php if( count($rows) == 0): ?>
       <p>No items added yet.<a href="add_item.php">Add some!</a></p>
     <?php else: ?>
@@ -60,6 +112,11 @@
       <?php endforeach; ?>
     </table>
     <p><a href="add_item.php">Add another item</a>.</p>
-  <?php endif; ?>
+    <?php endif; ?>
+
+    <footer>
+      &copy;2015, CL Inventory Tracker
+    </footer>
+
   </body>
 </html>

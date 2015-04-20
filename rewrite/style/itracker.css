@@ -118,7 +118,7 @@ ul
   color: white;
 }
 
-p, table
+p, fieldset, table
 {
   background-color: #fffffc;
   margin-top: 10px;
