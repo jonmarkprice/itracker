@@ -18,9 +18,18 @@
   endif;
 
   # sanitize inputs
+
+  if (!isset($_POST['pid'])):
+    echo 'id not set';
+    exit;
+  endif;
+
   if (preg_match('|^\d{5}$|', $_POST['pid'])):
     $id = $_POST['pid'];
+  else:
+    echo 'id not correct format';
   endif;
+
   $name = htmlspecialchars($_POST['name']);
   $subname = htmlspecialchars($_POST['subname']);
   $unit = htmlspecialchars($_POST['unit']);
@@ -35,10 +44,14 @@
   # add new user to database
   $statement = $db->prepare('insert into item (id, owner, name, description, unit)
     values(:pid, :owner, :name, :description, :unit);');
-  $statement->bindParam(':pid', $pid);
+  $statement->bindParam(':pid', $id);
   $statement->bindParam(':owner', $username);
   $statement->bindParam(':name', $name);
   $statement->bindParam(':description', $subname);
   $statement->bindParam(':unit', $unit);
   $statement->execute();
+
+  # return to home
+  header("Location: home.php");
+  exit;
 ?>

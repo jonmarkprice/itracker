@@ -1,5 +1,5 @@
 <?php
-# standard header
+  # standard header
   # Authors: Jonathan Price, Cindy La
   require_once("../../../cs315/db_login.php");
   error_reporting(E_ALL);
@@ -24,11 +24,18 @@
           PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
   # get all items owned by user
-  $stmt = $db->prepare('select name, description, quantity, unit, in_date 
+  $get_items = $db->prepare('select name, description, quantity, unit 
     from item where owner = :username;');
-  $stmt->bindParam(':username', $username);
-  $stmt->execute();
-  $rows = $stmt->fetchAll();
+  $get_items->bindParam(':username', $username);
+  $get_items->execute();
+  $rows = $get_items->fetchAll();
+
+  $get_name = $db->prepare('select firstname, lastname from user where username = :username;');
+  $get_name->bindParam(':username', $username);
+  $get_name->execute();
+  $users = $get_name->fetchAll();
+  $firstname = $users[0]['firstname'];
+  $lastname = $users[0]['lastname'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,14 +50,9 @@
     <h1>
       <img id="logo" src="itrack_logo.png" alt="logo" />
     </h1>
-
-    <aside class="login">
-
-      <?php if(!$loggedin): ?>
-        <p><a href="login.php">Log In</a></p>
-      <?php else: ?>
+    <aside>
         <p>
-          Hello <?= $_SESSION['fullname'] ?>!
+          Hello <?= $firstname ?> <?= $lastname ?>!
         </p>
         <p>
           <a href="profile.php">Edit Profile</a>
@@ -58,10 +60,7 @@
         <p>
           <a href="logout.php">Logout</a>
         </p>
-      <?php endif;?>
-
     </aside>
-
     <ul id="nav">
       <li><a href="add.php">Add New Item</a></li>
       <li><a href="contact.html">Contact Us</a></li>
@@ -111,17 +110,11 @@
       </tr>
       <?php endforeach; ?>
     </table>
-<<<<<<< HEAD
     <p><a href="add_item.php">Add another item</a>.</p>
     <?php endif; ?>
 
     <footer>
       &copy;2015, CL Inventory Tracker
     </footer>
-
-=======
-    <p><a href="enter_item.php">Add another item</a>.</p>
-  <?php endif; ?>
->>>>>>> 0c675b8d29cdf3b432a8d782213ef1218c9766a7
   </body>
 </html>

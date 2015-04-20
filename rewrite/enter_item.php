@@ -59,6 +59,8 @@
          (0[1-9]|1[012][- /.](0[1-9]|[12][0-9]|3[01])$/" />
     </p>
 -->
+
+    <input type="hidden" name="data_entered" value="true" />
     <p class="button">
       <button type="submit" name="addItem">Add Item</button>
     </p>
