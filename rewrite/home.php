@@ -1,6 +1,7 @@
 <?php
 # standard header
   # Authors: Jonathan Price, Cindy La
+  require_once("../../../cs315/db_login.php");
   error_reporting(E_ALL);
   ini_set('display_errors', '1');
 
