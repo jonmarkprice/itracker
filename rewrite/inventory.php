@@ -32,6 +32,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Manage users :: view</title>
+    <link rel="stylesheet" href="../milestone3/style/itracker.css" />
   </head>
   <body>
     <h1>View users</h1>

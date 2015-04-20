@@ -18,11 +18,12 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../milestone3/style/session.css" />
-    <title>Session Demo</title>
+    <link rel="stylesheet" href="../milestone3/style/itracker.css" />
+    <title>Itracker In</title>
   </head>
   <body>
     <p>Hello <a href="profile.php"><?= $username ?></a>!</p>
+    <p><a href="../milestone3/pages/home.php">Continue</a></p>
   </body>
 </html>
 

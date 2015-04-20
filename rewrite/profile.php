@@ -30,6 +30,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="../milestone3/style/itracker.css" />
     <title>Profile</title>
   </head>
   <body>

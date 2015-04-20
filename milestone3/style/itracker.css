@@ -65,6 +65,17 @@ header
   background-color: #fffffc;
 }
 
+section {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+
+#error {
+  border: 1px solid red;
+  color: red;
+}
+
 h1, h2
 {
   margin: 10px;
