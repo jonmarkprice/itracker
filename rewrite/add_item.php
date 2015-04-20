@@ -35,10 +35,10 @@
   # add new user to database
   $statement = $db->prepare('insert into item (id, owner, name, description, unit)
     values(:pid, :owner, :name, :description, :unit);');
-  $statement->bindParam(':pid', $pid, PDO::PARAM_INT);
-  $statement->bindParam(':owner', $username, PDO::PARAM_STR);
-  $statement->bindParam(':name', $name, PDO::PARAM_STR);
-  $statement->bindParam(':description', $subname, PDO::PARAM_STR);
-  $statement->bindParam(':unit', $unit, PDO::PARAM_STR);
+  $statement->bindParam(':pid', $pid);
+  $statement->bindParam(':owner', $username);
+  $statement->bindParam(':name', $name);
+  $statement->bindParam(':description', $subname);
+  $statement->bindParam(':unit', $unit);
   $statement->execute();
 ?>
