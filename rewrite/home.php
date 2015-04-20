@@ -111,6 +111,7 @@
       </tr>
       <?php endforeach; ?>
     </table>
+<<<<<<< HEAD
     <p><a href="add_item.php">Add another item</a>.</p>
     <?php endif; ?>
 
@@ -118,5 +119,9 @@
       &copy;2015, CL Inventory Tracker
     </footer>
 
+=======
+    <p><a href="enter_item.php">Add another item</a>.</p>
+  <?php endif; ?>
+>>>>>>> 0c675b8d29cdf3b432a8d782213ef1218c9766a7
   </body>
 </html>
