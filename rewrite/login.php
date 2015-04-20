@@ -16,8 +16,8 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../milestone3/style/itracker.css" />
-    <title>Session Demo</title>
+    <link rel="stylesheet" href="style/itracker.css" />
+    <title>Itracker Login</title>
   </head>
 
   <body>
