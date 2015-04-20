@@ -13,7 +13,7 @@
   $username = $_SESSION['username'];
 
   if(!isset($_POST['data_entered'])):
-    header("Location: enter_item.php");
+    echo 'not comming from enter_item';
     exit;
   endif;
 
