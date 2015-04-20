@@ -16,7 +16,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../style/session.css" />
+    <link rel="stylesheet" href="../milestone3/style/session.css" />
     <title>Session Demo</title>
   </head>
 
@@ -29,8 +29,9 @@
     <section>
       <?php if (isset($_GET['error']) && isset($_GET['user'])): ?>
       <p id="error">
-        Error: <?= $_GET['error'] ?> for user <?= $_GET['user'] ?>
-      </p> 
+        Error: <?= $_GET['error'] ?> 
+	for user &ldquo;<?= $_GET['user'] ?>&rdquo;
+      </p>
       <?php endif; ?>      
         <form action="verify_user.php" method="POST">
           <fieldset><legend>Log In</legend>
@@ -55,7 +56,7 @@
             <a href="reset_pwd.php">Forgot Password</a>
           </fieldset>
         </form>
-        <p>Need an account? <a href="profile.php">Sign up here</a>!</p>
+        <p>Need an account? <a href="signup.html">Sign up here</a>!</p>
     </section>
   </body>
 </html>

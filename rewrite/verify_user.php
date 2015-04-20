@@ -35,7 +35,7 @@
   $result = $stmt->fetchAll();
 
   if (empty($result)):
-    header("Location: login.php?user=$username;error=no_user");
+    header("Location: login.php?user=$username&error=no_user");
     exit;
   endif;
   $password_hash = $result[0]['password_hash'];
