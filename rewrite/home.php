@@ -59,7 +59,7 @@
       </tr>
       <?php endforeach; ?>
     </table>
-    <p><a href="add_item.php">Add another item</a>.</p>
+    <p><a href="enter_item.php">Add another item</a>.</p>
   <?php endif; ?>
   </body>
 </html>
