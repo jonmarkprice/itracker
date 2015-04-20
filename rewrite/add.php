@@ -58,7 +58,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="author" content="Cindy La and Jonathan Price" />
-    <link rel="stylesheet" href="itracker.css" />
+    <link rel="stylesheet" href="style/itracker.css" />
     <title>Add Item</title>
   </head>
   <body>
@@ -89,8 +89,8 @@
     <p>
       <label>
         Unit: 
-      </label><input type="text" id="unit" name="unit"
-               pattern="|^\d+$|" />
+      </label><input type="text" id="unit" name="unit" placeholder="Each or 6-pack"
+               pattern="|^(Each|6-pack)$|" />
     </p>
 <!--
     <p>
