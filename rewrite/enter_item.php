@@ -32,14 +32,22 @@
       <input type="text" id="pid" name="pid" 
              pattern="<?= $regex['pid'] ?>" autofocus="autofocus" />
     </p>
+
     <p>
       <label>Name:</label>
       <input type="text" id="name" name="name" />
     </p>
+
     <p>
       <label>Flavor/Size/Collection:</label>
       <input type="text" id="desc" name="desc" />
     </p>
+
+    <p>
+      <label>Quantity</label>
+      <input type="text" id="qaunt" name="quant" />
+    </p>
+
     <p>
       <label>Unit:</label>
       <select name="unit">
@@ -47,13 +55,9 @@
         <option value="6-pack">6-Pack</option>
       </select>
     </p>
-    <!-- <p>
-      <label>
-        Date:
-      </label><input type="date" name="date" pattern="/^(19|20)\d{2}[- /.]
-         (0[1-9]|1[012][- /.](0[1-9]|[12][0-9]|3[01])$/" />
-    </p> -->
+
     <input type="hidden" name="data_entered" value="true" />
+
     <p class="button">
       <button type="submit" name="addItem">Add Item</button>
     </p>
