@@ -18,7 +18,7 @@
   endif;
 
   # sanitize inputs
-  $fields = ["pid", "name", "desc", "unit"];
+  $fields = ["pid", "name", "desc", "quant", "unit"];
   $item = [];
   foreach ($fields as $field):
     if (!isset($_POST[$field])):
@@ -32,7 +32,9 @@
 
   # TODO: move to User class (User->[field]->check_format())
   # note that html wont work with (some?) delimiters while php requires them
-  $regex = ["pid" => "/^\d{5}$/", "unit" => "/^Each|6\-pack$/"];
+  $regex = ["pid" => "/^\d{5}$/", 
+    "unit" => "/^Each|6\-pack$/",
+    "quant" => "|^\d+$|"];
 
   # check correct format
   foreach ($regex as $field => $exp):
@@ -51,12 +53,13 @@
       PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
   
   # add new user to database
-  $statement = $db->prepare('insert into item (id, owner, name, description, unit)
-    values(:pid, :owner, :name, :desc, :unit);');
+  $statement = $db->prepare('insert into item (id, owner, name, description, quantity, unit)
+    values(:pid, :owner, :name, :desc, :quant, :unit);');
   $statement->bindParam(':pid', $item['pid']);
   $statement->bindParam(':owner', $username);
   $statement->bindParam(':name', $item['name']);
   $statement->bindParam(':desc', $item['desc']);
+  $statement->bindParam(':quant', $item['quant']);
   $statement->bindParam(':unit', $item['unit']);
   $statement->execute();
 
