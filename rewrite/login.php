@@ -1,5 +1,4 @@
 <?php
-  # standard header
   # Authors: Jonathan Price, Cindy La
   error_reporting(E_ALL);
   ini_set('display_errors', '1');
@@ -33,7 +32,7 @@
 	for user &ldquo;<?= $_GET['user'] ?>&rdquo;
       </p>
       <?php endif; ?>      
-        <form action="verify_user.php" method="POST">
+        <form action="lib/verify_user.php" method="POST">
           <fieldset><legend>Log In</legend>
             <p>
               <label for="username">Username: </label>
@@ -53,7 +52,7 @@
             <p>
               <button type="submit" name="submit">Log In</button>
             </p>
-            <a href="reset_pwd.php">Forgot Password</a>
+            <a href="lib/reset_pwd.php">Forgot Password</a>
           </fieldset>
         </form>
         <p>Need an account? <a href="signup.html">Sign up here</a>!</p>

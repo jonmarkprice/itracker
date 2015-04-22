@@ -1,19 +1,19 @@
 <?php
   # standard header
   # Authors: Jonathan Price, Cindy La
-  require_once("../../../cs315/db_login.php");
+  require_once("../../../../cs315/db_login.php");
   error_reporting(E_ALL);
   ini_set('display_errors', '1');
 
   # don't let user create account if already logged in
   session_start();
   if (isset($_SESSION['username'])):
-    header("Location: home.php");
+    header("Location: ../home.php");
     exit;
   endif;
 
   if(!isset($_POST['data_entered'])):
-    header("Location: enter_info.html");
+    header("Location: ../signup.html");
     exit;
   endif;
   	
