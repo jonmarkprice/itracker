@@ -45,6 +45,6 @@
 
   #log new user in
   $_SESSION['username'] = $username;
-  header("Location: home.php");
+  header("Location: ../home.php");
   exit;
 ?>
