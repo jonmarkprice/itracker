@@ -45,10 +45,9 @@
     <title>Home</title>
   </head>
   <body>
-    <p>Hello <a href="profile.php"><?= $username ?></a>!</p>
-
     <h1>
-      <img id="logo" src="itrack_logo.png" alt="logo" />
+      CL Inventory Tracker
+      <!--<img id="logo" src="itrack_logo.png" alt="logo" />-->
     </h1>
     <aside>
         <p>
