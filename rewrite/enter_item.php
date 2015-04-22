@@ -10,6 +10,10 @@
     exit;
   endif;
 
+  $regex = ["pid" => "^\d{5}$", "unit" => "^Each|6\-pack$"];
+
+if (isset($_POST['data_entered'])):
+
   # sanitize inputs
   $fields = ["pid", "name", "desc", "unit"];
   foreach ($fields as $field):
@@ -18,14 +22,10 @@
       exit;
     else:
       $_SESSION[$field] = htmlspecialchars($_POST[$field]);
-      unset($_POST[$field]);
     endif;
   endforeach;
-  unset($fields);
 
   # check correct format
-  $regex = ["pid" => "^\d{5}$", 
-    "unit" => "^Each|6\-pack$"];
   foreach ($regex as $field => $exp):
     if (!preg_match($exp, $_SESSION[$field])):
       $_POST['error'] = "Error: $field not in correct format!";
@@ -34,10 +34,9 @@
   endforeach;
 
   # redirect if submitted
-  if(isset($_POST['data_entered'])):
     header("Location: lib/add_item.php");
     exit;
-  endif;
+endif;
 ?>
 <!DOCTYPE html>
 <html>

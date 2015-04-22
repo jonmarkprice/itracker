@@ -62,7 +62,7 @@
         </p>
     </aside>
     <ul id="nav">
-      <li><a href="add.php">Add New Item</a></li>
+      <li><a href="enter_item.php">Add New Item</a></li>
       <li><a href="contact.html">Contact Us</a></li>
       <li>
         Search for your inventory here! &#40;Insert search bar here&#41;
