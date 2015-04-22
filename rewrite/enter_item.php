@@ -10,33 +10,8 @@
     exit;
   endif;
 
+  # TODO: move to User class (User->[field]->check_format())
   $regex = ["pid" => "^\d{5}$", "unit" => "^Each|6\-pack$"];
-
-if (isset($_POST['data_entered'])):
-
-  # sanitize inputs
-  $fields = ["pid", "name", "desc", "unit"];
-  foreach ($fields as $field):
-    if (!isset($_POST[$field])):
-      $_POST['error'] = "Error: $field not set!";
-      exit;
-    else:
-      $_SESSION[$field] = htmlspecialchars($_POST[$field]);
-    endif;
-  endforeach;
-
-  # check correct format
-  foreach ($regex as $field => $exp):
-    if (!preg_match($exp, $_SESSION[$field])):
-      $_POST['error'] = "Error: $field not in correct format!";
-      exit;
-    endif;
-  endforeach;
-
-  # redirect if submitted
-    header("Location: lib/add_item.php");
-    exit;
-endif;
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,8 +23,8 @@ endif;
   </head>
   <body>
     <h1>Add a new item to your inventory!</h1>
-    <?php if (isset($_POST['error'])): ?>
-      <p class="error"><?= $_POST['error'] ?></p>
+    <?php if (isset($_GET['error'])): ?>
+      <p class="error"><?= $_GET['error'] ?></p>
     <?php endif; ?>
     <form method="POST" action="lib/add_item.php">
     <p>
