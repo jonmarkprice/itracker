@@ -98,7 +98,6 @@
         <th>Description</th>
         <th>Quantity</th>
         <th>Unit</th>
-        <th>Date In</th>
       </tr>
       <?php foreach($rows as $row): ?>
       <tr>
@@ -106,11 +105,10 @@
         <td><?= $row['description'] ?></td>
         <td><?= $row['quantity'] ?></td>
         <td><?= $row['unit'] ?></td>
-        <td><?= $row['date_in'] ?></td>
       </tr>
       <?php endforeach; ?>
     </table>
-    <p><a href="add_item.php">Add another item</a>.</p>
+    <p><a href="enter_item.php">Add another item</a>.</p>
     <?php endif; ?>
 
     <footer>
