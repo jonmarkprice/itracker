@@ -1,0 +1,130 @@
+/* Jonathan Price & Cindy La */
+
+#logo
+{
+  position: absolute;
+  top: 10px;
+  left: 25px;
+  width: 300px;
+  height: auto;
+}
+
+body
+{
+  font-family: sans-serif;
+}
+
+header
+{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  background-color: #3399ff;
+}
+
+#nav
+{
+  list-style-type: none;
+  margin: 10px;
+  padding: 10px;
+  background-color: #3399ff;
+}
+
+#nav li
+{
+  display: inline;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+  color: white;
+}
+
+aside
+{
+  float: right;
+  border: 1px solid black;
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 150px;
+}
+
+section
+{
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+
+#error
+{
+  border: 1px solid red;
+}
+
+h1, h2
+{
+  margin: 10px;
+  padding: 15px;
+}
+
+a:link, a:visited
+{
+  color: black;
+}
+
+a:hover
+{
+  color: #00ccff;
+}
+
+p, table
+{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+
+.login
+{
+
+}
+
+table, th, td
+{
+  margin: 10px;
+  padding: 15px;
+  width: auto;
+  border-collapse: collapse;
+  border: 1px solid black;
+  padding: 5px;
+  text-align: left;
+}
+
+footer
+{
+  margin: 10px;
+  padding: 15px;
+  display: block;
+  font-size: 75%;
+  background-color: #3399ff;
+  color: white;
+  text-align: center;
+  clear: both;
+}
+
