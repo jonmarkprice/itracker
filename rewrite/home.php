@@ -57,7 +57,7 @@
           <a href="profile.php">Edit Profile</a>
         </p>
         <p>
-          <a href="logout.php">Logout</a>
+          <a href="lib/logout.php">Logout</a>
         </p>
     </aside>
     <ul id="nav">
@@ -89,7 +89,7 @@
 
 
     <?php if( count($rows) == 0): ?>
-      <p>No items added yet.<a href="add_item.php">Add some!</a></p>
+      <p>No items added yet.<a href="enter_item.php">Add some!</a></p>
     <?php else: ?>
     <table>
       <tr>
