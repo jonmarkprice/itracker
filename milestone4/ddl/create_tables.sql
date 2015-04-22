@@ -7,7 +7,7 @@ create table item (
   name varchar(255) not null,
   unit enum('Each','6-pack') not null,
   description varchar(255),
-  quantity int,
+  quantity int not null default 1,
   primary key (id, owner),
   foreign key (owner) references user(username)
 );
