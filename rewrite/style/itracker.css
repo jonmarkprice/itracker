@@ -1,171 +1,17 @@
-/* Cindy La and Jonathan Price */
-
-body
-{
-  background-color: #003d3d;
-}
-
-header
-{
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 10px;
-  padding-top: 200px;
-  padding-bottom: 200px;
-  background-color: #fffffc;
-  border-style: solid;
-  border-color: #99ffcc;
-  border-width: 5px;
-  font-family: sans-serif;
-  color: #003d3d;
-  font-size: large;
-}
+/* Jonathan Price & Cindy La */
 
 #logo
 {
   position: absolute;
   top: 10px;
-  left: 50px;
-  width: 500px;
+  left: 25px;
+  width: 300px;
   height: auto;
 }
 
-#inventory
-{
-  position: absolute;
-  left: 275px;
-  top: 125px;
-  width: 100px;
-  height: auto;
-}
-
-#nav
-{
-  list-style-type: none;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 0;
-  border: 2px solid;
-  border-radius: 25px;
-}
-
-#nav li, footer
-{
-  display: inline;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  text-align: center;
-  font-family: sans-serif;
-  background-color: #fffffc;
-}
-
-section {
-  border: 1px solid black;
-  margin: 5px;
-  padding: 5px;
-}
-
-#error {
-  border: 1px solid red;
-  color: red;
-}
-
-h1, h2
-{
-  margin: 10px;
-  padding: 20px;
-  background-color: #99ffcc;
-  color: #003d3d;
-  font-family: sans-serif;
-}
-
-h2
-{
-  padding: 10px;
-}
-
-a:link
-{
-  color: #003d3d;
-  text-decoration: underline;
-}
-
-a:visited
-{
-  color: #ff33cc;
-  text-decoration: none;
-}
-
-a:hover
-{
-  font-style: normal;
-}
-
-ul
+body
 {
   font-family: sans-serif;
-  color: #003d3d;
-}
-
-#contact
-{
-  color: white;
-}
-
-p, fieldset, table
-{
-  background-color: #fffffc;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 170px;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  border-color: #ff33cc;
-  border-width: 2px;
-  font-family: sans-serif;
-  color: #003d3d;
 }
 
 
-.login
-{
-  float: right;
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px;
-  width: 150px;
-}
-
-table
-{
-  border-collapse: collapse;
-}
-
-table, th, td
-{
-  border: 1px solid #003d3d;
-  padding: 5px;
-  text-align: left;
-}
-
-.button
-{
-  background-color: #003d3d;
-}
-
-footer
-{
-  display: block;
-  color: #003d3d;
-  font-size: 75%;
-}
