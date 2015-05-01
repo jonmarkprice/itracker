@@ -16,12 +16,12 @@
   if (!isset($_GET['pid'])):
     $_SESSION['error_message'] = "no pid";
     $_SESSION['error_data'][0] = htmlspecialchars($_GET['pid']);
-    header("Location: home.php?status=error&from=edit_item");
+    header("Location: ../home.php?status=error&from=delete_item");
     exit;
   elseif (!preg_match('/^\d{5}$/', $_GET['pid'])):
     $_SESSION['error_message'] = "bad pid format";
     $_SESSION['error_data'][0] = htmlspecialchars($_GET['pid']);
-    header("Location: home.php?status=error&from=edit_item");
+    header("Location: ../home.php?status=error&from=delete_item");
     exit;
   else:
     $pid = $_GET['pid'];
