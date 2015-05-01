@@ -12,4 +12,3 @@ create table item (
   foreign key (owner) references user(username)
 );
 
-drop table if exists user;
