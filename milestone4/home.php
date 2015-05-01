@@ -45,10 +45,7 @@
     <title>Home</title>
   </head>
   <body>
-    <h1>
-      CL Inventory Tracker
-      <!--<img id="logo" src="itrack_logo.png" alt="logo" />-->
-    </h1>
+    <h1>CL Inventory Tracker</h1>
     <aside>
         <p>
           Hello <?= $firstname ?> <?= $lastname ?>!
@@ -78,13 +75,6 @@
       or observe the overall incoming and outgoing items over time on
       the front page.
     </p>
-
-    <p class="side">
-      This is a work in progress, so if you have any suggestions for
-      improvement please don&rsquo;t hesitate to contact us.  Any questions,
-      comments, or concerns are also encouraged.
-    </p>
-
 
     <?php if( count($rows) == 0): ?>
       <p>No items added yet. <a href="enter_item.php">Add some!</a></p>
