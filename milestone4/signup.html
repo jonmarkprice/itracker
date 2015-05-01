@@ -8,11 +8,10 @@
   </head>
   <body>
     <h1>Create your account</h2>
-    <section>
       <form action="lib/create_user.php" method="POST">
         <fieldset>
           <legend>Create a new user</legend>
-    		  <p>
+	  <p>
             <label for="username">Username: </label>
             <input type="text" pattern="\w+" required="required" 
                    name="username" autofocus="autofocus" 
@@ -21,8 +20,8 @@
 
           <p>
             <label for="firstname">First name: </label>
-            <input type="text" pattern="\w+" required="required" name="firstname" 
-                   placeholder="Jane" id="firstname" />
+
+            <input type="text" pattern="\w+" required="required" name="firstname"                   placeholder="Jane" id="firstname" />
           </p>
 
           <p>
@@ -51,8 +50,7 @@
           </p>
 
         <input type="hidden" name="data_entered" value="true" />
-        </fieldset>
-      </form>
-    </section>
+      </fieldset>
+    </form>
   </body>
  </html>

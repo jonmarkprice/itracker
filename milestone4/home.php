@@ -46,20 +46,11 @@
   </head>
   <body>
     <h1>CL Inventory Tracker</h1>
-    <aside>
-        <p>
-          Hello <?= $firstname ?> <?= $lastname ?>!
-        </p>
-        <p>
-          <a href="profile.php">Edit Profile</a>
-        </p>
-        <p>
-          <a href="lib/logout.php">Logout</a>
-        </p>
-    </aside>
     <ul id="nav">
-      <li><a href="enter_item.php">Add New Item</a></li>
+      <li>Hello <?= $firstname ?>!</li>
       <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="profile.php">View Profile</a></li>
+      <li><a href="lib/logout.php">Logout</a></li>
     </ul>
     <?php if (isset($_SESSION['error_message'])): ?>
     <div id="errors">

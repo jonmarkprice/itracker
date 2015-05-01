@@ -11,7 +11,7 @@
   endif;
 
   # TODO: move to User class (User->[field]->check_format())
-  $regex = ["pid" => "^\d{5}$", "quant" => "\d+"];
+  $regex = ["pid" => "/^\d{5}$/", "quant" => "\d+"];
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,6 +26,7 @@
   <?php if (isset($_GET['error'])): ?>
     <p class="error"><?= $_GET['error'] ?></p>
   <?php endif; ?>
+  <button id="test">Test</button>
   <form method="POST" action="lib/add_item.php">
     <p>
       <label>Product ID:</label>
@@ -55,7 +56,9 @@
       </select>
     </p>
     <input type="hidden" name="data_entered" value="true" />
-    <button type="submit" name="addItem">Add Item</button>
+    <button type="submit" class="hidden" id="add_button" name="addItem">
+      Add Item
+    </button>
   </form>
   <p><a href="home.php">Return to Home</a></p>
   <script type="text/javascript" src="lib/check_pid.js"></script>

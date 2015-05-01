@@ -1,14 +1,5 @@
 /* Jonathan Price & Cindy La */
 
-#logo
-{
-  position: absolute;
-  top: 10px;
-  left: 25px;
-  width: 300px;
-  height: auto;
-}
-
 body
 {
   font-family: sans-serif;
@@ -35,7 +26,7 @@ header
   background-color: #3399ff;
 }
 
-#nav li
+#nav li, #nav a
 {
   display: inline;
   margin-top: 10px;
@@ -67,7 +58,7 @@ section
   padding: 5px;
 }
 
-#error
+.error, #error
 {
   border: 1px solid red;
 }
@@ -100,11 +91,6 @@ p, table
   padding-bottom: 15px;
 }
 
-.login
-{
-
-}
-
 table, th, td
 {
   margin: 10px;
@@ -128,3 +114,12 @@ footer
   clear: both;
 }
 
+.visible
+{
+  display: block;
+}
+
+.hidden
+{
+  display: none;
+}
