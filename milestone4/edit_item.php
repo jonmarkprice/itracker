@@ -1,13 +1,12 @@
-/*
-TODO:
-- refers to non-existent 'lib/update_item.php'
-- handlers for $_SESSION['error_message'] and ['error_data'] do not exist home yet
-- consider creating a database object
-- consider create an error object
-*/
 <?php
+# TODO:
+# - refers to non-existent 'lib/update_item.php'
+# - handlers for $_SESSION['error_message'] and ['error_data'] do not exist home yet
+# - consider creating a database object
+# - consider create an error object
+
   # Authors: Jonathan Price, Cindy La  
-  require_once("../../../../cs315/db_login.php");
+  require_once("../../../cs315/db_login.php");
   error_reporting(E_ALL);
   ini_set('display_errors', '1');
 
@@ -35,7 +34,7 @@ TODO:
     $_SESSION['error_data'][0] = htmlspecialchars($_GET['pid']);
     header("Location: home.php?status=error&from=edit_item");
     exit;
-  else if (!preg_match('/^\d{5}$/', $_GET['pid'])):
+  elseif (!preg_match('/^\d{5}$/', $_GET['pid'])):
     $_SESSION['error_message'] = "bad pid format";
     $_SESSION['error_data'][0] = htmlspecialchars($_GET['pid']);
     header("Location: home.php?status=error&from=edit_item");
@@ -47,7 +46,7 @@ TODO:
   # get info from database
   $getitem = $db->prepare('select name, unit, description, quantity from item 
     where (owner = :owner) and (id = :pid);');
-  $getitem->bindParam(':pid', $pid]);
+  $getitem->bindParam(':pid', $pid);
   $getitem->bindParam(':owner', $username);
   $getitem->execute();
   $item = $getitem->fetchAll();
