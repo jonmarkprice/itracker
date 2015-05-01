@@ -52,7 +52,6 @@
             <p>
               <button type="submit" name="submit">Log In</button>
             </p>
-            <a href="lib/reset_pwd.php">Forgot Password</a>
           </fieldset>
         </form>
         <p>Need an account? <a href="signup.html">Sign up here</a>!</p>

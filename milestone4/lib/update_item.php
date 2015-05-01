@@ -52,9 +52,13 @@
     array(PDO::ATTR_EMULATE_PREPARES => false,
       PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
   
-  # add new item to database
-  $statement = $db->prepare('insert into item (id, owner, name, description, quantity, unit)
-    values(:pid, :owner, :name, :desc, :quant, :unit);');
+  # add new user to database
+  $statement = $db->prepare('update item 
+    set name = :name,
+        description = :desc,
+        quantity = :quant,
+        unit = :unit
+    where owner = :owner and id = :pid;');
   $statement->bindParam(':pid', $item['pid']);
   $statement->bindParam(':owner', $username);
   $statement->bindParam(':name', $item['name']);

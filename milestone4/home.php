@@ -24,7 +24,7 @@
           PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
   # get all items owned by user
-  $get_items = $db->prepare('select name, description, quantity, unit 
+  $get_items = $db->prepare('select id, name, description, quantity, unit 
     from item where owner = :username;');
   $get_items->bindParam(':username', $username);
   $get_items->execute();
@@ -70,7 +70,11 @@
         </form>-->
       </li>
     </ul>
-
+    <?php if (isset($_SESSION['error_message'])): ?>
+    <div id="errors">
+      <p id="message">Error: <?= $_SESSION['error_message'] ?></p>
+    </div>
+    <?php unset($_SESSION['error_message']); endif; ?>
     <p>
       Welcome to the inventory tracker created by Cindy and Jon.  This is
       a tool to help you organize your business as easily and efficiently
@@ -97,13 +101,20 @@
         <th>Description</th>
         <th>Quantity</th>
         <th>Unit</th>
+        <th></th>
       </tr>
       <?php foreach($rows as $row): ?>
       <tr>
-        <td><?= $row['name'] ?></td>
-        <td><?= $row['description'] ?></td>
-        <td><?= $row['quantity'] ?></td>
-        <td><?= $row['unit'] ?></td>
+        <form action="edit_item.php?pid=<?= $row['id'] ?>" method="POST">
+          <td><?= $row['name'] ?></td>
+          <td><?= $row['description'] ?></td>
+          <td><?= $row['quantity'] ?></td>
+          <td><?= $row['unit'] ?></td>
+          <td><button type="submit">Edit</button></td>
+        </form>
+        <form action="lib/delete_item.php?pid=<?= $row['id'] ?>" method="POST">
+          <td><button type="submit">Delete</button></td>
+        </form>
       </tr>
       <?php endforeach; ?>
     </table>
