@@ -70,7 +70,11 @@
         </form>-->
       </li>
     </ul>
-
+    <?php if (isset($_SESSION['error_message'])) ?>
+    <div id="errors">
+      <p id="message">Error: <?= $_SESSION['error_message'] ?></p>
+    </div>
+    <?php endif; ?>
     <p>
       Welcome to the inventory tracker created by Cindy and Jon.  This is
       a tool to help you organize your business as easily and efficiently
