@@ -112,6 +112,9 @@
           <td><?= $row['unit'] ?></td>
           <td><button type="submit">Edit</button></td>
         </form>
+        <form action="lib/delete_item.php?pid=<?= $row['id'] ?>" method="POST">
+          <td><button type="submit">Delete</button></td>
+        </form>
       </tr>
       <?php endforeach; ?>
     </table>
