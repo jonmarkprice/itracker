@@ -104,10 +104,13 @@
       </tr>
       <?php foreach($rows as $row): ?>
       <tr>
-        <td><?= $row['name'] ?></td>
-        <td><?= $row['description'] ?></td>
-        <td><?= $row['quantity'] ?></td>
-        <td><?= $row['unit'] ?></td>
+        <form action="edit_item.php?pid=<?= $row['pid'] ?>" method="POST">
+          <td><?= $row['name'] ?></td>
+          <td><?= $row['description'] ?></td>
+          <td><?= $row['quantity'] ?></td>
+          <td><?= $row['unit'] ?></td>
+          <td><button type="submit">Edit</button></td>
+        </form>
       </tr>
       <?php endforeach; ?>
     </table>
