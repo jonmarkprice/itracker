@@ -69,11 +69,7 @@
     <p>
       Welcome to the inventory tracker created by Cindy and Jon.  This is
       a tool to help you organize your business as easily and efficiently
-      as possible.  You are able to add and delete items, see your whole
-      inventory in tables or graphs, and find items by table sorting and
-      search bar.  With the click of an item, see its sales trends
-      or observe the overall incoming and outgoing items over time on
-      the front page.
+      as possible.
     </p>
 
     <?php if( count($rows) == 0): ?>
