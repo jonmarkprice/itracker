@@ -63,12 +63,6 @@
     <ul id="nav">
       <li><a href="enter_item.php">Add New Item</a></li>
       <li><a href="contact.html">Contact Us</a></li>
-      <li>
-        Search for your inventory here! &#40;Insert search bar here&#41;
-        <!--<form method="get" action="itracker.php">
-          <input type="search" />
-        </form>-->
-      </li>
     </ul>
     <?php if (isset($_SESSION['error_message'])): ?>
     <div id="errors">
@@ -93,7 +87,7 @@
 
 
     <?php if( count($rows) == 0): ?>
-      <p>No items added yet.<a href="enter_item.php">Add some!</a></p>
+      <p>No items added yet. <a href="enter_item.php">Add some!</a></p>
     <?php else: ?>
     <table>
       <tr>
@@ -101,20 +95,24 @@
         <th>Description</th>
         <th>Quantity</th>
         <th>Unit</th>
-        <th></th>
+        <th colspan="2">Actions</th>
       </tr>
       <?php foreach($rows as $row): ?>
       <tr>
-        <form action="edit_item.php?pid=<?= $row['id'] ?>" method="POST">
-          <td><?= $row['name'] ?></td>
-          <td><?= $row['description'] ?></td>
-          <td><?= $row['quantity'] ?></td>
-          <td><?= $row['unit'] ?></td>
-          <td><button type="submit">Edit</button></td>
-        </form>
-        <form action="lib/delete_item.php?pid=<?= $row['id'] ?>" method="POST">
-          <td><button type="submit">Delete</button></td>
-        </form>
+        <td><?= $row['name'] ?></td>
+        <td><?= $row['description'] ?></td>
+        <td><?= $row['quantity'] ?></td>
+        <td><?= $row['unit'] ?></td>
+        <td>
+          <form action="edit_item.php?pid=<?= $row['id'] ?>" method="POST">
+            <button type="submit">Edit</button>
+          </form>
+        </td>
+        <td>
+          <form action="lib/delete_item.php?pid=<?= $row['id'] ?>" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
       </tr>
       <?php endforeach; ?>
     </table>
