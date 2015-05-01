@@ -1,7 +1,5 @@
 <?php
 # TODO:
-# - refers to non-existent 'lib/update_item.php'
-# - handlers for $_SESSION['error_message'] and ['error_data'] do not exist home yet
 # - consider creating a database object
 # - consider create an error object
 
@@ -77,8 +75,7 @@
   <form method="POST" action="lib/update_item.php">
     <p>
       <label>Product ID:</label>
-      <input type="text" id="pid" name="pid" value="<?= $pid ?>"
-             pattern="<?= $regex['pid'] ?>" autofocus="autofocus" />
+      <?= $pid ?>
     </p>
     <p>
       <label>Name:</label>
