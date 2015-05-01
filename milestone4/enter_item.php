@@ -31,6 +31,7 @@
       <label>Product ID:</label>
       <input type="text" id="pid" name="pid" 
              pattern="<?= $regex['pid'] ?>" autofocus="autofocus" />
+      <span id="pid_error"></span>
     </p>
     <p>
       <label>Name:</label>
@@ -57,5 +58,6 @@
     <button type="submit" name="addItem">Add Item</button>
   </form>
   <p><a href="home.php">Return to Home</a></p>
+  <script type="text/javascript" src="lib/check_pid.js"></script>
 </body>
 </html>

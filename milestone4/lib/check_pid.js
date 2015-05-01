@@ -7,13 +7,14 @@ window.onload = function()
 }
 
 function check_pid()
-{
+{ 
+  var pid = document.getElementById("pid").value;
   var request = new XMLHttpRequest();
 
-  request.open("GET","check_pid.php", true);
+  request.open("GET","lib/check_pid.php?pid="+pid, true);
   request.onload = function()
   {
-    document.getElementById("piderror").innerHTML = request.responseText;
+    document.getElementById("pid_error").innerHTML = request.responseText;
   }
   request.send(null);
 }

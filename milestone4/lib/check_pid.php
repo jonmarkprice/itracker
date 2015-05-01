@@ -7,26 +7,18 @@
   
   session_start();
   if (!isset($_SESSION['username'])):
-#    header("Location: ../login.php");
     exit;
   endif;
   $username = $_SESSION['username'];
-/*  
-  if(!isset($_POST['data_entered'])):
-    header("Location: ../login.php");
-    exit;
-  endif;
-*/
-  # sanitize inputs
-  $field = "pid";
-  if (!isset($_GET[$field])):
-    echo "Error: $field not set!";
+
+  # sanitize input
+  if (!isset($_GET['pid'])):
+    echo "Error: ". $_GET['pid'] ." not set!";
     exit;
   endif;
 
   # check correct format
-    if (!preg_match("/^\d{5}$/", $field)):
-      $error = "Error: $field not in correct format!";
+    if (!preg_match('/^\d{5}$/', $_GET['pid'])):
       exit;
     endif;
 
@@ -40,18 +32,15 @@
   # add new user to database
   $statement = $db->prepare('select id from item 
     where owner = :owner and id = :pid;');
-  $statement->bindParam(':pid', $item['pid']);
+  $statement->bindParam(':pid', $_GET['pid']);
   $statement->bindParam(':owner', $username);
   $statement->execute();
 
   $rows = $statement->fetchAll();
 
   # id already exists in db
-  if ($rows != null):?>
-    Product already in database.
-  <?php endif;
-
-?>Error<?php
-
+  if ($rows != null):
 ?>
+  Product already in database.
+<?php endif;?>
 
