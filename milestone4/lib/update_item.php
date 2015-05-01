@@ -57,8 +57,8 @@
     set name = :name,
         description = :desc,
         quantity = :quant,
-        unit = :unit,
-    where (owner = :owner) and (id = :pid);');
+        unit = :unit
+    where owner = :owner and id = :pid;');
   $statement->bindParam(':pid', $item['pid']);
   $statement->bindParam(':owner', $username);
   $statement->bindParam(':name', $item['name']);

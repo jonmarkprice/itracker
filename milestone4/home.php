@@ -70,7 +70,7 @@
         </form>-->
       </li>
     </ul>
-    <?php if (isset($_SESSION['error_message'])) ?>
+    <?php if (isset($_SESSION['error_message'])): ?>
     <div id="errors">
       <p id="message">Error: <?= $_SESSION['error_message'] ?></p>
     </div>

@@ -49,7 +49,8 @@
   $getitem->bindParam(':pid', $pid);
   $getitem->bindParam(':owner', $username);
   $getitem->execute();
-  $item = $getitem->fetchAll();
+  $rows = $getitem->fetchAll();
+  $item = $rows[0];
 
   # check if info returned
   if ($item == null):
@@ -102,7 +103,7 @@
       </select>
     </p>
     <input type="hidden" name="data_entered" value="true" />
-    <button type="submit" name="addItem">Add Item</button>
+    <button type="submit" name="addItem">Edit Item</button>
   </form>
   <p><a href="home.php">Return to Home</a></p>
 </body>
