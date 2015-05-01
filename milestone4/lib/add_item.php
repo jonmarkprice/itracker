@@ -32,7 +32,8 @@
 
   # TODO: move to User class (User->[field]->check_format())
   # note that html wont work with (some?) delimiters while php requires them
-  $regex = ["pid" => "/^\d{5}$/", 
+  $regex = ["pid" => "/^\d{5}$/",
+    "name" => "/\w[\w\s]*/",
     "unit" => "/^Each|6\-pack$/",
     "quant" => "|^\d+$|"];
 

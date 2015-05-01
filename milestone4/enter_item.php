@@ -34,7 +34,8 @@
     </p>
     <p>
       <label>Name:</label>
-      <input type="text" id="name" name="name" />
+      <input type="text" id="name" name="name" 
+             pattern=".{2,}"/>
     </p>
     <p>
       <label>Flavor/Size/Collection:</label>
