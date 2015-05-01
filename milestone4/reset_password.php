@@ -57,11 +57,10 @@
   $update_pw->execute();
   
   # email user
-  $to = $_POST['reset_email'];
   $subject = "Inventory tracker password reset";
-  $email = "jmp3748@truman.edu";
+  $from = "jmp3748@truman.edu";
   $msg = "Your new password for $username is $new_password \n";
-  mail( $to, $subject, $msg, 'From:' . $email );
+  mail( $email, $subject, $msg, 'From:' . $from);
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,7 +72,7 @@
   </head>
   <body>
     <h1>Forgot Password</h1>
-    <p>We&lsquo;ve sent an temporary password to your email at <?= $email ?>.</p>
+    <p>We&rsquo;ve sent an temporary password to your email at <?= $email ?>.</p>
     <p><a href="login.php">Log in</a>!</p>
   </body>
  </html>

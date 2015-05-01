@@ -25,7 +25,6 @@
         CL Inventory Tracker
       </h1>
     </header>
-    <section>
       <?php if (isset($_GET['error']) && isset($_GET['user'])): ?>
       <p id="error">
         Error: <?= $_GET['error'] ?> 
@@ -52,10 +51,9 @@
             <p>
               <button type="submit" name="submit">Log In</button>
             </p>
-            <a href="lib/reset_pwd.php">Forgot Password</a>
+            <a href="forgot_password.html">Forgot Password</a>
           </fieldset>
         </form>
         <p>Need an account? <a href="signup.html">Sign up here</a>!</p>
-    </section>
   </body>
 </html>
